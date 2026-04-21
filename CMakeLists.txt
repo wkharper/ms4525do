@@ -1,5 +1,10 @@
 # v3.14 required for FetchContent_MakeAvailable
 cmake_minimum_required(VERSION 3.14)
+
+idf_component_register(SRCS "src/ms4525do.cpp"
+                       INCLUDE_DIRS "src/"
+                       REQUIRES arduino-esp32)
+
 if (DEFINED MCU)
   include(FetchContent)
   FetchContent_Declare(
